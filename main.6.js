@@ -65,15 +65,18 @@ const globalChartOptions = {
 
 prism.on('dashboardloaded', (event, args) => {
 
-	args.dashboard.on('widgetprocessresult', function (w, args) {
+	args.dashboard.on('widgetprocessresult', function (dash, widget) {
 
 		//main
 
-		let widgetType = args.widget.manifest.name;
+		let widgetType = widget.manifest.name;
 		let shouldApplyGlobalChartOptions = lookup(applyGlobalOptionsToChartType, widgetType);
-console.log(w, args);
+
 		if (shouldApplyGlobalChartOptions){
-			args.options = applyHighchartsOptions(globalChartOptions, args.options);
+			widget.on('beforeviewloaded', function(widget, element){
+				console.log(widget, element);
+			})
+			//args.options = applyHighchartsOptions(globalChartOptions, args.options);
 		}
 
 
