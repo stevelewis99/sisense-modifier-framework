@@ -51,14 +51,13 @@ const applyGlobalOptionsToChartType = {
     "chart/line": true,
     "chart/area": true,
     "chart/scatter": true,
-	"chart/boxplot": true,
-	"chart/funnel": true
+	"chart/boxplot": true
 };
 
 const globalChartOptions = {
     "chart": {
-        "spacing": [20, 10, 10, 10],
-        "backgroundColor": "#330000"
+        "spacing": [10, 5, 5, 5],
+        "backgroundColor": "#fff3f2"
     }
 };
 
@@ -86,6 +85,9 @@ prism.on('dashboardloaded', (event, args) => {
 				//console.log(widget, element);
 				element.options = applyHighchartsOptions(globalChartOptions, element.options);
 			});
+		}
+		else {
+			console.log(widgetType, w);
 		}
 
 		w.widget.on('domready', setWidgetFullHeight); 
@@ -199,9 +201,7 @@ prism.on('dashboardloaded', (event, args) => {
 		//         );
 		//     }
 		// }
-		else {
-			console.log(widgetType);
-		}
+		
 
 	});
 });
