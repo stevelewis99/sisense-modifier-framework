@@ -1,11 +1,14 @@
 {
-	name: "SisenseModifierFramework",
-	source: [
+	"name": "SisenseModifierFramework",
+	"source": [
 		"main.js",
+		"chartOptions.js",
+		"helpers.js"
 	],
 	"style": [
         "styles/custom.css"
     ],
     "isEnabled": true,
+	"pluginInfraVersion": 2,
     "version": "1.0.00"
 }
