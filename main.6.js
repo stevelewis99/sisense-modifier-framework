@@ -69,7 +69,7 @@ prism.on('dashboardloaded', (event, args) => {
 
 		//main
 
-		let widgetType = widget.widget.manifest.name;
+		let widgetType = w.widget.manifest.name;
 		let shouldApplyGlobalChartOptions = lookup(applyGlobalOptionsToChartType, widgetType);
 
 		if (shouldApplyGlobalChartOptions){
