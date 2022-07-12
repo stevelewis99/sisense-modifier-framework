@@ -188,7 +188,7 @@ prism.on('dashboardloaded', (event, args) => {
 		//     }
 		// }
 		else {
-			console.log(args);
+			console.log(widgetType);
 		}
 
 	});
