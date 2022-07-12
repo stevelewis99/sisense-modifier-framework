@@ -1,3 +1,5 @@
+import './helpers.js';
+
 prism.on('dashboardloaded', (event, args) => {
 
 	args.dashboard.on('widgetprocessresult', function (w, args) {
