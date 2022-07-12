@@ -1,0 +1,4 @@
+/* Change color of last build time */
+.toolbar-dashboard-datasource__date {
+    color: #32CD32 !important;
+}

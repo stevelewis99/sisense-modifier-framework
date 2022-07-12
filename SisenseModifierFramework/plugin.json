@@ -1,0 +1,11 @@
+{
+	name: "SisenseModifierFramework",
+	source: [
+		"main.js",
+	],
+	"style": [
+        "styles/custom.css"
+    ],
+    "isEnabled": true,
+    "version": "1.0.00"
+}
