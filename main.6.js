@@ -71,7 +71,7 @@ prism.on('dashboardloaded', (event, args) => {
 
 		let widgetType = args.widget.manifest.name;
 		let shouldApplyGlobalChartOptions = lookup(applyGlobalOptionsToChartType, widgetType);
-
+console.log(w, args);
 		if (shouldApplyGlobalChartOptions){
 			args.options = applyHighchartsOptions(globalChartOptions, args.options);
 		}
