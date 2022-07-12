@@ -1,4 +1,4 @@
-import './helpers.js';
+import './helpers';
 
 prism.on('dashboardloaded', (event, args) => {
 
