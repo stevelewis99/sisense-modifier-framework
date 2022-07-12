@@ -30,7 +30,7 @@ const usesPanel = (panels, targetPanel) => {
 };
 
 const applyHighchartsOptions = (newChartOptions, existingChartOptions) => {
-    let options = $.extend(true, element.options, chartOptions);
+    let options = $.extend(true, existingChartOptions, newChartOptions);
     return options;
 }
 
