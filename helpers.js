@@ -1,4 +1,4 @@
-function lookup(obj, key) {
+const lookup = (obj, key) => {
 	var type = typeof key;
 	if (type == 'string' || type == "number") key = ("" + key).replace(/\[(.*?)\]/, function (m, key) {//handle case where [1] may occur
 		return '.' + key;
@@ -12,7 +12,7 @@ function lookup(obj, key) {
 }
 
 //determine if chart uses a break by. should take in metadata.panels as parameter
-function usesPanel(panels, targetPanel) {
+const usesPanel = (panels, targetPanel) => {
 	var breaks = panels.filter(function (entry) {
 		if (entry.title == targetPanel) {
 			return entry
@@ -25,7 +25,7 @@ function usesPanel(panels, targetPanel) {
 	}
 };
 
-function applyHighchartsOptions(newChartOptions, existingChartOptions){
+const applyHighchartsOptions = (newChartOptions, existingChartOptions) => {
     let options = $.extend(true, element.options, chartOptions);
     return options;
 }
