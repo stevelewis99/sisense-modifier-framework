@@ -75,8 +75,8 @@ prism.on('dashboardloaded', (event, args) => {
 		if (shouldApplyGlobalChartOptions){
 			w.widget.on('beforeviewloaded', function(widget, element){
 				console.log(widget, element);
+				args.options = applyHighchartsOptions(globalChartOptions, element.options);
 			})
-			//args.options = applyHighchartsOptions(globalChartOptions, args.options);
 		}
 
 
