@@ -34,6 +34,13 @@ const applyHighchartsOptions = (newChartOptions, existingChartOptions) => {
     return options;
 }
 
+const setWidgetFullHeight = (el) => {
+	var $c = $('.widget-body', el.chart);
+	$c.each(function(){
+			this.style = "height: 100%";
+	});
+}
+
 /* chartOptions.6.js */
 
 const applyGlobalOptionsToChartType = {
@@ -44,6 +51,8 @@ const applyGlobalOptionsToChartType = {
     "chart/line": true,
     "chart/area": true,
     "chart/scatter": true,
+	"chart/boxplot": true,
+	"chart/funnel": true
 };
 
 const globalChartOptions = {
@@ -75,9 +84,12 @@ prism.on('dashboardloaded', (event, args) => {
 		if (shouldApplyGlobalChartOptions){
 			w.widget.on('beforeviewloaded', function(widget, element){
 				//console.log(widget, element);
-				args.options = applyHighchartsOptions(globalChartOptions, element.options);
-			})
+				element.options = applyHighchartsOptions(globalChartOptions, element.options);
+			});
 		}
+
+		w.widget.on('domready', setWidgetFullHeight); 
+
 
 
 
