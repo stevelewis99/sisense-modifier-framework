@@ -56,8 +56,7 @@ const applyGlobalOptionsToChartType = {
 
 const globalChartOptions = {
     "chart": {
-        "spacing": [10, 5, 5, 5],
-        "backgroundColor": "#fff3f2"
+        "spacing": [16, 8, 8, 8],
     }
 };
 
