@@ -1,5 +1,67 @@
-import './helpers.6';
-import './chartOptions.6';
+/* start of stuff that could be put in external js files - if I can work out how to import them so they actually work! */
+
+/* helpers.6.js */
+
+const lookup = (obj, key) => {
+	var type = typeof key;
+	if (type == 'string' || type == "number") key = ("" + key).replace(/\[(.*?)\]/, function (m, key) {//handle case where [1] may occur
+		return '.' + key;
+	}).split('.');
+	//console.log(key);
+	for (var i = 0, l = key.length, currentkey; i < l; i++) {
+		if (obj.hasOwnProperty(key[i])) obj = obj[key[i]];
+		else return undefined;
+	}
+	return obj;
+}
+
+//determine if chart uses a break by. should take in metadata.panels as parameter
+const usesPanel = (panels, targetPanel) => {
+	var breaks = panels.filter(function (entry) {
+		if (entry.title == targetPanel) {
+			return entry
+		}
+	});
+	if (breaks && breaks[0] && breaks[0].items && breaks[0].items.length == 0) {
+		return false
+	} else {
+		return true
+	}
+};
+
+const applyHighchartsOptions = (newChartOptions, existingChartOptions) => {
+    let options = $.extend(true, element.options, chartOptions);
+    return options;
+}
+
+/* chartOptions.6.js */
+
+const applyGlobalOptionsToChartType = {
+    "chart/pie": true,
+    "chart/bar": true,
+    "chart/column": true,
+    "chart/polar": true,
+    "chart/line": true,
+    "chart/area": true,
+    "chart/scatter": true,
+};
+
+const globalChartOptions = {
+    "chart": {
+        "spacing": [20, 10, 10, 10],
+        "backgroundColor": "#ff0000"
+    }
+};
+
+// const pieChartOptions = {
+//     "chart": {
+//         "spacing": [20, 10, 10, 10],
+//         "backgroundColor": "#ff0000"
+//     }
+// };
+
+/* end of stuf that should be in external files */
+
 
 prism.on('dashboardloaded', (event, args) => {
 
