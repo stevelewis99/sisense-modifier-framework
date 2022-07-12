@@ -1,4 +1,5 @@
-import './helpers';
+import './helpers.6';
+import './chartOptions.6';
 
 prism.on('dashboardloaded', (event, args) => {
 

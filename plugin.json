@@ -1,8 +1,7 @@
 {
 	"name": "SisenseModifierFramework",
 	"source": [
-		"main.js",
-		"chartOptions.js"
+		"main.6.js"
 	],
 	"style": [
         "custom.css"
