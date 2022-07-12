@@ -1,6 +1,6 @@
 prism.on('dashboardloaded', (event, args) => {
 
-	args.dashboard.on('beforeviewloaded', function (w, args) {
+	args.dashboard.on('widgetbeforeviewloaded', function (w, args) {
 
 		//main
 

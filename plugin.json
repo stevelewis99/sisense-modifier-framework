@@ -6,7 +6,7 @@
 		"helpers.js"
 	],
 	"style": [
-        "styles/custom.css"
+        "custom.css"
     ],
     "isEnabled": true,
 	"pluginInfraVersion": 2,
